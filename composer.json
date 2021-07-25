@@ -1,0 +1,19 @@
+{
+    "name": "jaddek/kraken-http-client",
+    "type": "library",
+    "authors": [
+        {
+            "name": "tonynazarov",
+            "email": "tonynazarov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "symfony/http-client": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jaddek\\Kraken\\Http\\Client\\": "src/"
+        }
+    }
+}
