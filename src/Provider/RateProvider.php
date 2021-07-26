@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider;
 
-use Jaddek\Kraken\Http\Client\TickerInterface;
-use Jaddek\Kraken\Http\Client\AbstractClient;
-use Jaddek\Kraken\Http\Client\AbstractProvider;
+use Jaddek\Kraken\Http\Client\Client\TickerInterface;
 use Jaddek\Kraken\Http\Client\Response\Rate;
-use Jaddek\Kraken\Http\Client\Ticker;
 use Psr\Log\LoggerInterface;
 
 class RateProvider
