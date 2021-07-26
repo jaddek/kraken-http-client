@@ -23,6 +23,8 @@ class RateProvider
         ];
 
         $response = $this->client->rate($query);
+
+        dd($query, $response->toArray(false));
         $data     = $response->toArray()['result'] ?? [];
 
         return new Rate($data);

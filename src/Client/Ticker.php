@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jaddek\Kraken\Http\Client\Client;
 
 use Symfony\Contracts\HttpClient\ResponseInterface;
+use Jaddek\Kraken\Http\Client\AbstractClient;
 
 class Ticker extends AbstractClient implements TickerInterface
 {

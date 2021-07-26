@@ -18,7 +18,7 @@ class Rate
         $this->rate    = (string)($data[$pairKeyword]['c'][0] ?? '0');
     }
 
-    private function findCurrentPair(array $data): string
+    private function findCurrentPair(array $data): ?string
     {
         return array_key_first($data);
     }
