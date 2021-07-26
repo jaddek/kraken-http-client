@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jaddek\\Kraken\\Http\\Client\\": "src/"
+            "Jaddek\\Kraken\\Http\\": "src/"
         }
     }
 }
