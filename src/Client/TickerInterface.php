@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Kraken\Http\Client;
+namespace Jaddek\Kraken\Http\Client\Client;
 
 interface TickerInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client;
+namespace Jaddek\Kraken\Http\Client\Client;
 
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
