@@ -8,7 +8,7 @@ use Jaddek\Kraken\Http\Client\Client\TickerInterface;
 use Jaddek\Kraken\Http\Client\Response\Rate;
 use Psr\Log\LoggerInterface;
 
-class RateProvider
+class CoinRateProvider
 {
     public function __construct(TickerInterface $client, LoggerInterface $logger)
     {
