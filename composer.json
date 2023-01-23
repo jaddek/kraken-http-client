@@ -9,11 +9,15 @@
     ],
     "require": {
         "php": "^8.0",
-        "symfony/http-client": "^5.3"
+        "symfony/http-client": "^6.2",
+        "jaddek/hydrator": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "Jaddek\\Kraken\\Http\\Client\\": "src/"
         }
+    },
+    "require-dev": {
+        "vimeo/psalm": "^5.5"
     }
 }

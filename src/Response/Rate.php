@@ -4,21 +4,18 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Response;
 
-use JetBrains\PhpStorm\Pure;
-
 class Rate
 {
-    private string $keyword;
-    private string $rate;
+    private ?string $keyword;
+    private string  $rate;
 
-    #[Pure]
     public function __construct(array $data)
     {
-        $this->keyword = $pairKeyword = $this->findCurrentPair($data);
-        $this->rate    = (string)($data[$pairKeyword]['c'][0] ?? '0');
+        $this->keyword = $this->findCurrentPair($data);
+        $this->rate    = (string)($data[$this->keyword]['c'][0] ?? '0');
     }
 
-    private function findCurrentPair(array $data): ?string
+    private function findCurrentPair(array $data): string|null
     {
         return array_key_first($data);
     }
