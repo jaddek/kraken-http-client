@@ -15,8 +15,6 @@ class KrakenErrors
         'EService:Market in cancel_only mode'          => 'Request can\'t be made at this time (See SystemStatus endpoint)',
         'EService:Market in post_only mode'            => 'Request can\'t be made at this time (See SystemStatus endpoint)',
         'EService:Deadline elapsed'                    => 'The request timed out according to the default or specified deadline',
-        // There is no information in documentation about this error
-        'EAPI:Bad request'                             => 'Bad request',
         'EAPI:Invalid key'                             => 'An invalid API-Key header was supplied (see Authentication section)',
         'EAPI:Invalid signature'                       => 'An invalid API-Sign header was supplied (see Authentication section)',
         'EAPI:Invalid nonce'                           => 'An invalid nonce was supplied (see Authentication section)',
@@ -35,6 +33,8 @@ class KrakenErrors
         'EOrder:Domain rate limit exceeded'            => '(See Rate Limits section)',
         'EOrder:Positions limit exceeded'              => '',
         'EOrder:Unknown position'                      => '',
+        // There is no information in the documentation about this error
+        'EAPI:Bad request'                             => 'Bad request',
     ];
 
     public static function getErrorDescription(string $error): string

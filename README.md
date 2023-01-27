@@ -124,3 +124,34 @@ $provider->detachErrorCallback(); // detach exception throwing
 $result   = $provider($data);
 ```
 
+## Exceptions
+
+**Base exception**
+```php
+\Jaddek\Kraken\Http\Client\KrakenException::class
+```
+**KrakenValidationException**
+
+Applicable for create order. Validator checks min volume operation validation.
+
+```php
+\Jaddek\Kraken\Http\Client\KrakenValidationException::class
+```
+
+Min Volume list: 
+
+```php
+\Jaddek\Kraken\Http\Client\MinTradeLimits::class
+```
+
+**Client exception**
+
+```php
+\Jaddek\Kraken\Http\Client\Client\KrakenHttpException::class
+```
+
+List of Kraken errors:
+
+```php
+\Jaddek\Kraken\Http\Client\Client\KrakenErrors::class
+```
