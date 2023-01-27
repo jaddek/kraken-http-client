@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Ticker;
+namespace Jaddek\Kraken\Http\Client\Provider\Order\Add\Single;
 
 use Jaddek\Hydrator\Item;
-use Jaddek\Kraken\Http\Client\Provider\Ticker\Response\PairCollection;
+use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Response\Result;
 
 class Response extends Item
 {
     public function __construct(
-        private readonly PairCollection $result,
-        private readonly array          $error = [],
+        private readonly ?Result $result = null,
+        private readonly array   $error = [],
     )
     {
 
     }
 
     /**
-     * @return PairCollection
+     * @return Result|null
      */
-    public function getResult(): PairCollection
+    public function getResult(): ?Result
     {
         return $this->result;
     }

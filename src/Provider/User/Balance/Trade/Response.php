@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Ticker;
+namespace Jaddek\Kraken\Http\Client\Provider\User\Balance\Trade;
 
 use Jaddek\Hydrator\Item;
 use Jaddek\Kraken\Http\Client\Provider\Ticker\Response\PairCollection;
@@ -10,17 +10,17 @@ use Jaddek\Kraken\Http\Client\Provider\Ticker\Response\PairCollection;
 class Response extends Item
 {
     public function __construct(
-        private readonly PairCollection $result,
-        private readonly array          $error = [],
+        private readonly ?Balance $result = null,
+        private readonly array   $error = [],
     )
     {
 
     }
 
     /**
-     * @return PairCollection
+     * @return null|Balance
      */
-    public function getResult(): PairCollection
+    public function getResult(): ?Balance
     {
         return $this->result;
     }
@@ -32,4 +32,5 @@ class Response extends Item
     {
         return $this->error;
     }
+
 }
