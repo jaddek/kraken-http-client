@@ -44,6 +44,10 @@ class KeySync
         'o' => null
     ];
 
+    /**
+     * @param array<string, mixed> $data
+     * @return array<string, mixed>
+     */
     public static function sync(array $data, string $pair): array
     {
         $synced = [

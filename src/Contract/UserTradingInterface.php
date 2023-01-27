@@ -9,8 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 interface UserTradingInterface
 {
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/addOrder
@@ -18,8 +17,7 @@ interface UserTradingInterface
     public function orderAdd(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/addOrderBatch
@@ -27,7 +25,7 @@ interface UserTradingInterface
     public function orderAddBatch(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/editOrder
@@ -35,7 +33,7 @@ interface UserTradingInterface
     public function orderEdit(array $body): ResponseInterface;
 
     /**
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/cancelOrder
@@ -43,7 +41,7 @@ interface UserTradingInterface
     public function orderCancel(array $body): ResponseInterface;
 
     /**
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/cancelAllOrders
@@ -51,7 +49,7 @@ interface UserTradingInterface
     public function orderCancelAll(array $body): ResponseInterface;
 
     /**
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/cancelAllOrdersAfter
@@ -59,7 +57,7 @@ interface UserTradingInterface
     public function orderCancelAfterX(array $body): ResponseInterface;
 
     /**
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/cancelOrderBatch

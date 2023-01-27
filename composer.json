@@ -18,6 +18,13 @@
         }
     },
     "require-dev": {
-        "vimeo/psalm": "^5.5"
+        "vimeo/psalm": "^5.5",
+        "squizlabs/php_codesniffer": "*",
+        "slevomat/coding-standard": "^8.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

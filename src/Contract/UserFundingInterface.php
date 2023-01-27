@@ -9,8 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 interface UserFundingInterface
 {
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/getDepositMethods
@@ -18,8 +17,7 @@ interface UserFundingInterface
     public function getDepositMethods(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/getDepositAddresses
@@ -27,8 +25,7 @@ interface UserFundingInterface
     public function getDepositAddresses(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/getStatusRecentDeposits
@@ -36,8 +33,7 @@ interface UserFundingInterface
     public function getStatusOfRecentDeposits(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/getWithdrawalInformation
@@ -45,8 +41,7 @@ interface UserFundingInterface
     public function getWithdrawalInformation(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/withdrawFunds
@@ -54,8 +49,7 @@ interface UserFundingInterface
     public function withdrawFunds(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/getStatusRecentWithdrawals
@@ -63,8 +57,7 @@ interface UserFundingInterface
     public function getStatusOfRecentWithdrawals(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/cancelWithdrawal
@@ -72,8 +65,7 @@ interface UserFundingInterface
     public function requestWithdrawalCancellation(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Funding/operation/walletTransfer

@@ -9,8 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 interface UserStakingInterface
 {
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Staking/operation/stake
@@ -18,8 +17,7 @@ interface UserStakingInterface
     public function stakeAsset(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Staking/operation/unstake
@@ -27,8 +25,7 @@ interface UserStakingInterface
     public function unStakeAsset(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Staking/operation/getStakingAssetInfo
@@ -36,8 +33,7 @@ interface UserStakingInterface
     public function getListOfStakeableAssets(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Staking/operation/getStakingPendingDeposits
@@ -45,8 +41,7 @@ interface UserStakingInterface
     public function getPendingStakingTransactions(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Staking/operation/getStakingTransactions

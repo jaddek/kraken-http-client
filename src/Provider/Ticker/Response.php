@@ -9,12 +9,14 @@ use Jaddek\Kraken\Http\Client\Provider\Ticker\Response\PairCollection;
 
 class Response extends Item
 {
+    /**
+     * @param array<int, mixed> $error
+     */
     public function __construct(
         private readonly PairCollection $result,
         private readonly array          $error = [],
     )
     {
-
     }
 
     /**

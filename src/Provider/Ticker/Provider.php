@@ -42,6 +42,10 @@ class Provider extends BaseProvider
         return $response;
     }
 
+    /**
+     * @param array<string, mixed> $data
+     * @return void
+     */
     private function adaptContent(array &$data): void
     {
         $synced = [];

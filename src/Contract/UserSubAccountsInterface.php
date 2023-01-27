@@ -9,8 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 interface UserSubAccountsInterface
 {
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Subaccounts/operation/createSubaccount
@@ -18,8 +17,7 @@ interface UserSubAccountsInterface
     public function createSubAccount(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Subaccounts/operation/accountTransfer

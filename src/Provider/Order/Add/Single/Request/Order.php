@@ -246,7 +246,7 @@ class Order implements ArrayInterface
     }
 
     /**
-     * @return null|bool
+     * @return bool|null
      */
     public function isReduceOnly(): ?bool
     {
@@ -254,7 +254,7 @@ class Order implements ArrayInterface
     }
 
     /**
-     * @return null|EnumOrderTrigger
+     * @return EnumOrderTrigger|null
      */
     public function getTrigger(): ?EnumOrderTrigger
     {
@@ -262,7 +262,7 @@ class Order implements ArrayInterface
     }
 
     /**
-     * @return null|EnumTradePreventionBehaviors
+     * @return EnumTradePreventionBehaviors|null
      */
     public function getStptype(): ?EnumTradePreventionBehaviors
     {
@@ -270,7 +270,7 @@ class Order implements ArrayInterface
     }
 
     /**
-     * @return null|EnumTimeInforce
+     * @return EnumTimeInforce|null
      */
     public function getTimeinforce(): ?EnumTimeInforce
     {

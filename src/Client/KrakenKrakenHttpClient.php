@@ -41,8 +41,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
 
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -60,8 +59,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -79,7 +77,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -93,7 +91,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -107,7 +105,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -119,7 +117,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -133,7 +131,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -154,8 +152,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -173,8 +170,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -192,8 +188,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -207,8 +202,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -222,8 +216,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -237,8 +230,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -252,8 +244,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -267,8 +258,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -282,8 +272,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -297,8 +286,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -312,8 +300,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -327,8 +314,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -342,8 +328,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -357,8 +342,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -372,8 +356,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -393,8 +376,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -408,8 +390,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -423,8 +404,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -438,8 +418,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -453,8 +432,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -468,8 +446,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -483,8 +460,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -498,8 +474,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -519,8 +494,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -534,8 +508,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -549,8 +522,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -564,8 +536,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -579,8 +550,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -600,8 +570,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -615,8 +584,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<mixed, mixed> $body
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -658,7 +626,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -670,7 +638,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -682,7 +650,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -693,6 +661,11 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
         ]);
     }
 
+    /**
+     * @param array<string, string> $query
+     * @return ResponseInterface
+     * @throws TransportExceptionInterface
+     */
     public function getOHLCData(array $query): ResponseInterface
     {
         return $this->httpClient->request('GET', '/0/public/OHLC', [
@@ -701,7 +674,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -713,7 +686,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
@@ -725,7 +698,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     }
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */

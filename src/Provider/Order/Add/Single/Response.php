@@ -9,6 +9,9 @@ use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Response\Result;
 
 class Response extends Item
 {
+    /**
+     * @param array<int, mixed> $error
+     */
     public function __construct(
         private readonly ?Result $result = null,
         private readonly array   $error = [],

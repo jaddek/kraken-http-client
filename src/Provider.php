@@ -42,6 +42,10 @@ abstract class Provider
         $this->errorCallback = null;
     }
 
+    /**
+     * @param array<int, string> $errors
+     * @return void
+     */
     protected function runErrorCallback(array $errors): void
     {
         if ($this->errorCallback === null) {

@@ -9,8 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 interface UserDataInterface
 {
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getAccountBalance
@@ -18,8 +17,7 @@ interface UserDataInterface
     public function getAccountBalance(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getTradeBalance
@@ -27,8 +25,7 @@ interface UserDataInterface
     public function getTradeBalance(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getOpenOrders
@@ -36,8 +33,7 @@ interface UserDataInterface
     public function getOpenOrders(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getClosedOrders
@@ -45,8 +41,7 @@ interface UserDataInterface
     public function getClosedOrders(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getOrdersInfo
@@ -54,8 +49,7 @@ interface UserDataInterface
     public function getQueryOrderInfo(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getTradesHistory
@@ -63,8 +57,7 @@ interface UserDataInterface
     public function getTradesHistory(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getQueryTradesInfo
@@ -72,8 +65,7 @@ interface UserDataInterface
     public function getQueryTradesInfo(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getOpenPositions
@@ -81,8 +73,7 @@ interface UserDataInterface
     public function getOpenPositions(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getLedgersInfo
@@ -90,8 +81,7 @@ interface UserDataInterface
     public function getLedgersInfo(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getQueryLedgers
@@ -99,8 +89,7 @@ interface UserDataInterface
     public function getQueryLedgers(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getTradeVolume
@@ -108,8 +97,7 @@ interface UserDataInterface
     public function getTradeVolume(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/addExport
@@ -117,8 +105,7 @@ interface UserDataInterface
     public function requestExportReport(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/exportStatus
@@ -126,8 +113,7 @@ interface UserDataInterface
     public function requestExportReportStatus(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/retrieveExport
@@ -135,8 +121,7 @@ interface UserDataInterface
     public function retrieveDataExport(string $nonce, array $body): ResponseInterface;
 
     /**
-     * @param string $nonce
-     * @param array $body
+     * @param array<string, mixed> $body
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/User-Data/operation/removeExport

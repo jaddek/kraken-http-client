@@ -9,6 +9,9 @@ use Jaddek\Kraken\Http\Client\Provider\Ticker\Response\PairCollection;
 
 class Response extends Item
 {
+    /**
+     * @param array<int, mixed> $error
+     */
     public function __construct(
         private readonly ?Balance $result = null,
         private readonly array   $error = [],
@@ -18,7 +21,7 @@ class Response extends Item
     }
 
     /**
-     * @return null|Balance
+     * @return Balance|null
      */
     public function getResult(): ?Balance
     {

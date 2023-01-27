@@ -23,7 +23,7 @@ interface MarketDataInterface
     public function getSystemStatus(): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getAssetInfo
@@ -31,7 +31,7 @@ interface MarketDataInterface
     public function getAssetInfo(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getTradableAssetPairs
@@ -39,7 +39,7 @@ interface MarketDataInterface
     public function getTradableAssetPairs(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getTickerInformation
@@ -47,7 +47,7 @@ interface MarketDataInterface
     public function getTickerInformation(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getOHLCData
@@ -55,7 +55,7 @@ interface MarketDataInterface
     public function getOHLCData(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getOrderBook
@@ -63,7 +63,7 @@ interface MarketDataInterface
     public function getOrderBook(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getRecentTrades
@@ -71,7 +71,7 @@ interface MarketDataInterface
     public function getRecentTrades(array $query): ResponseInterface;
 
     /**
-     * @param array $query
+     * @param array<string, string> $query
      * @return ResponseInterface
      *
      * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getRecentSpreads

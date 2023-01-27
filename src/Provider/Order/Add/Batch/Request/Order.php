@@ -240,7 +240,7 @@ class Order implements \JsonSerializable
     }
 
     /**
-     * @return null|EnumOrderTrigger
+     * @return EnumOrderTrigger|null
      */
     public function getTrigger(): ?EnumOrderTrigger
     {
@@ -248,7 +248,7 @@ class Order implements \JsonSerializable
     }
 
     /**
-     * @return null|EnumTradePreventionBehaviors
+     * @return EnumTradePreventionBehaviors|null
      */
     public function getStptype(): ?EnumTradePreventionBehaviors
     {
@@ -256,7 +256,7 @@ class Order implements \JsonSerializable
     }
 
     /**
-     * @return null|EnumTimeInforce
+     * @return EnumTimeInforce|null
      */
     public function getTimeinforce(): ?EnumTimeInforce
     {
