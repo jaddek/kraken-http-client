@@ -5,18 +5,10 @@ declare(strict_types=1);
 namespace Jaddek\Kraken\Http\Client\Provider\Order\Edit;
 
 use Jaddek\Hydrator\Hydrator;
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClientInterface;
-use Jaddek\Kraken\Http\Client\Provider\Singleton;
+use Jaddek\Kraken\Http\Client\Provider as BaseProvider;
 
-class Provider extends Singleton
+class Provider extends BaseProvider
 {
-    protected function __construct(
-        protected readonly KrakenHttpClientInterface $client,
-    )
-    {
-        parent::__construct();
-    }
-
     public function __invoke(RequestBody $body): Response
     {
         $content = $this->client

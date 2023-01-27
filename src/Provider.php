@@ -6,36 +6,38 @@ namespace Jaddek\Kraken\Http\Client;
 
 use Jaddek\Kraken\Http\Client\Client\KrakenErrors;
 use Jaddek\Kraken\Http\Client\Client\KrakenHttpException;
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClientInterface;
-use Jaddek\Kraken\Http\Client\Provider\Singleton;
+use Jaddek\Kraken\Http\Client\Contract\KrakenHttpClientInterface;
 
-abstract class Provider extends Singleton
+abstract class Provider
 {
-    protected function __construct(
+    final protected function __construct(
         protected readonly KrakenHttpClientInterface $client,
+        protected ?\Closure $errorCallback = null,
     )
     {
         $this->attachDefaultErrorCallback();
-        parent::__construct();
     }
 
-    protected ?\Closure $errorCallback = null;
+    public static function getInstance(KrakenHttpClientInterface $client): static
+    {
+        return new static($client);
+    }
 
-    public function attachErrorCallback(\Closure $closure)
+    public function attachErrorCallback(\Closure $closure): void
     {
         $this->errorCallback = $closure;
     }
 
     public function attachDefaultErrorCallback(): void
     {
-        $this->errorCallback = function (array $errors) {
+        $this->errorCallback = function (array $errors): void {
             $error = current($errors);
 
             throw new KrakenHttpException($error, KrakenErrors::getErrorDescription($error));
         };
     }
 
-    public function detachErrorCallback()
+    public function detachErrorCallback(): void
     {
         $this->errorCallback = null;
     }

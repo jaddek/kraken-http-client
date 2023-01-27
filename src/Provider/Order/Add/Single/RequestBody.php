@@ -64,7 +64,7 @@ class RequestBody extends BaseRequestBody
     public function toArrayWithSubOrder(bool $withoutNulls = true): array
     {
         $data  = $this->toArray();
-        $order = $data['order'] ?? null;
+        $order = $data['order'] ?? [];
         $data  = array_merge($data, $order);
         unset($data['order']);
 

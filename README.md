@@ -12,7 +12,7 @@ Kraken REST API: https://docs.kraken.com/rest/
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClient;
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
 use Jaddek\Kraken\Http\Client\Crypto;
 use Jaddek\Kraken\Http\Client\Fiat;
 use Jaddek\Kraken\Http\Client\Provider\Ticker\RequestQuery;
@@ -21,7 +21,7 @@ use Jaddek\Kraken\Http\Client\ProviderFactory;
 $query = new RequestQuery();
 $query->addPair(Crypto::LTC, Fiat::EUR);
 
-$httpClient = KrakenHttpClient::createDefaultClient();
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
 $factory    = new ProviderFactory($httpClient);
 
 $provider = $factory->getTickerProvider();
@@ -40,7 +40,7 @@ $result = $provider($query);
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClient;
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
 use Jaddek\Kraken\Http\Client\ProviderFactory;
 use Jaddek\Kraken\Http\Client\Auth\Signer;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
@@ -52,7 +52,7 @@ const SECRET = '';
 const KEY = '';
 
 $signer     = new Signer(key: KEY, secret: SECRET);
-$httpClient = KrakenHttpClient::createDefaultClient($signer);
+$httpClient = KrakenKrakenHttpClient::createDefaultClient($signer);
 $factory    = new ProviderFactory($httpClient);
 
 $provider = $factory->getUserAccountBalanceProvider();
@@ -66,7 +66,7 @@ $result = $provider();
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClient;
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
 use Jaddek\Kraken\Http\Client\ProviderFactory;
 use Jaddek\Kraken\Http\Client\Auth\Signer;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
@@ -78,7 +78,7 @@ const SECRET = '';
 const KEY = '';
 
 $signer     = new Signer(key: KEY, secret: SECRET);
-$httpClient = KrakenHttpClient::createDefaultClient($signer);
+$httpClient = KrakenKrakenHttpClient::createDefaultClient($signer);
 $factory    = new ProviderFactory($httpClient);
 
 $provider = $factory->getUserTradeBalanceProvider();
@@ -89,10 +89,11 @@ $result = $provider();
 ### User trading
 
 #### Create single order
+
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClient;
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
 use Jaddek\Kraken\Http\Client\ProviderFactory;
 use Jaddek\Kraken\Http\Client\Auth\Signer;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
@@ -104,7 +105,7 @@ const SECRET = '';
 const KEY = '';
 
 $signer     = new Signer(key: KEY, secret: SECRET);
-$httpClient = KrakenHttpClient::createDefaultClient($signer);
+$httpClient = KrakenKrakenHttpClient::createDefaultClient($signer);
 $factory    = new ProviderFactory($httpClient);
 
 

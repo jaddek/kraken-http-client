@@ -26,7 +26,7 @@ class Provider extends BaseProvider
     public function __invoke(RequestQuery $query): Response
     {
         $content = $this->client
-            ->ticker($query->toQuery())
+            ->getTickerInformation($query->toQuery())
             ->toArray()
         ;
 

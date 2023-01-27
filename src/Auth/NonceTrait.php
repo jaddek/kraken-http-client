@@ -17,9 +17,9 @@ trait NonceTrait
         return $this->nonce;
     }
 
-    public function setNonce(string $value): void
+    public function setNonce(string $nonce): void
     {
-        $this->nonce = $value;
+        $this->nonce = $nonce;
     }
 
     public function genNonce(): string

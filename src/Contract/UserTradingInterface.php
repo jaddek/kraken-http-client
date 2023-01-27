@@ -2,20 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Client;
+namespace Jaddek\Kraken\Http\Client\Contract;
 
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
-interface KrakenHttpClientInterface
+interface UserTradingInterface
 {
-    /**
-     * @param array $query
-     * @return ResponseInterface
-     *
-     * @see https://docs.kraken.com/rest/#tag/Market-Data/operation/getTickerInformation
-     */
-    public function ticker(array $query): ResponseInterface;
-
     /**
      * @param string $nonce
      * @param array $body
@@ -73,22 +65,4 @@ interface KrakenHttpClientInterface
      * @see https://docs.kraken.com/rest/#tag/User-Trading/operation/cancelOrderBatch
      */
     public function orderCancelBatch(array $body): ResponseInterface;
-
-    /**
-     * @param string $nonce
-     * @param array $body
-     * @return ResponseInterface
-     *
-     * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getAccountBalance
-     */
-    public function getAccountBalance(string $nonce, array $body): ResponseInterface;
-
-    /**
-     * @param string $nonce
-     * @param array $body
-     * @return ResponseInterface
-     *
-     * @see https://docs.kraken.com/rest/#tag/User-Data/operation/getTradeBalance
-     */
-    public function getTradeBalance(string $nonce, array $body): ResponseInterface;
 }

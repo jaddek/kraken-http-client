@@ -213,7 +213,7 @@ class MinTradeLimits
     private const GBP_LIMIT = '5';
     private const AUD_LIMIT = '10';
 
-    public static function getTradeLimit($currency): ?string
+    public static function getTradeLimit(string $currency): ?string
     {
         return static::getTradeLimits()[$currency] ?? null;
     }

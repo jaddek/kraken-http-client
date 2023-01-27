@@ -10,7 +10,7 @@ class Result extends Item
 {
     public function __construct(
         private readonly Description $descr,
-        private readonly ?array      $txid = [],
+        private readonly ?array      $txid = null,
     )
     {
 
@@ -25,9 +25,9 @@ class Result extends Item
     }
 
     /**
-     * @return array
+     * @return array|null
      */
-    public function getTxid(): array
+    public function getTxid(): ?array
     {
         return $this->txid;
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client;
 
-use Jaddek\Kraken\Http\Client\Client\KrakenHttpClientInterface;
+use Jaddek\Kraken\Http\Client\Contract\KrakenHttpClientInterface;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Batch\Provider as OrderAddBatchProvider;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Provider as OrderAddProvider;
 use Jaddek\Kraken\Http\Client\Provider\Ticker\Provider as TickerProvider;
