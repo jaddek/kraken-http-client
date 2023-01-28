@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\Order\Add\Batch;
 
-use Jaddek\Hydrator\Item;
+use Jaddek\Kraken\Http\Client\Hydrator\Item;
 use Jaddek\Kraken\Http\Client\Provider\Order\Add\Batch\Response\Result;
 use Jaddek\Kraken\Http\Client\Provider\User\Balance\Trade\Balance;
 

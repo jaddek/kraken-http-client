@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\Order\Add\Single;
 
-use Jaddek\Hydrator\Hydrator;
-use Jaddek\Hydrator\HydratorException;
+use Jaddek\Kraken\Http\Client\Hydrator\Hydrator;
+use Jaddek\Kraken\Http\Client\Hydrator\HydratorException;
 use Jaddek\Kraken\Http\Client\KrakenValidationException;
 use Jaddek\Kraken\Http\Client\Provider as BaseProvider;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;

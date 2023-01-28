@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\Order\Edit;
 
-use Jaddek\Hydrator\Item;
+use Jaddek\Kraken\Http\Client\Hydrator\Item;
 use Jaddek\Kraken\Http\Client\Provider\Order\Edit\Response\Result;
 
 class Response extends Item

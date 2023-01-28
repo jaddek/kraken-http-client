@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\Ticker\Response;
 
-use Jaddek\Hydrator\Collection;
-use Jaddek\Hydrator\Item;
+use Jaddek\Kraken\Http\Client\Hydrator\Collection;
+use Jaddek\Kraken\Http\Client\Hydrator\Item;
 
 class PairCollection extends Collection
 {

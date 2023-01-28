@@ -9,8 +9,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "symfony/http-client": "^6.2",
-        "jaddek/hydrator": "^1.0"
+        "symfony/http-client": "^6.2"
     },
     "autoload": {
         "psr-4": {

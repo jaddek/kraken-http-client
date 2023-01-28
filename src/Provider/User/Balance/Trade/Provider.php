@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\User\Balance\Trade;
 
-use Jaddek\Hydrator\Hydrator;
+use Jaddek\Kraken\Http\Client\Hydrator\Hydrator;
 use Jaddek\Kraken\Http\Client\Provider as BaseProvider;
 
 class Provider extends BaseProvider
