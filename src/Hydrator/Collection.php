@@ -9,7 +9,7 @@ namespace Jaddek\Kraken\Http\Client\Hydrator;
  */
 abstract class Collection extends \ArrayIterator implements \JsonSerializable
 {
-    protected array $collection;
+    protected array $collection = [];
 
     public function add(Item $item): void
     {

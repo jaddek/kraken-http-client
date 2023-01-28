@@ -10,6 +10,11 @@ use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Provider as OrderAddProv
 use Jaddek\Kraken\Http\Client\Provider\Ticker\Provider as TickerProvider;
 use Jaddek\Kraken\Http\Client\Provider\User\Balance\Account\Provider as AccountBalanceProvider;
 use Jaddek\Kraken\Http\Client\Provider\User\Balance\Trade\Provider as TradeBalanceProvider;
+use Jaddek\Kraken\Http\Client\Provider\Time\Provider as ServerTimeProvider;
+use Jaddek\Kraken\Http\Client\Provider\Status\Provider as SystemStatusProvider;
+use Jaddek\Kraken\Http\Client\Provider\AssetInfo\Provider as AssetInfoProvider;
+
+
 
 class ProviderFactory
 {
@@ -45,5 +50,20 @@ class ProviderFactory
     public function getUserTradeBalanceProvider(): TradeBalanceProvider
     {
         return TradeBalanceProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getServerTimeProvider(): ServerTimeProvider
+    {
+        return ServerTimeProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getSystemStatusProvider(): SystemStatusProvider
+    {
+        return SystemStatusProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getAssetInfoProvider(): AssetInfoProvider
+    {
+        return AssetInfoProvider::getInstance($this->krakenHttpClient);
     }
 }

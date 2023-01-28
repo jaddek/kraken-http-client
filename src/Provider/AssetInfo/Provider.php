@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Ticker;
+namespace Jaddek\Kraken\Http\Client\Provider\AssetInfo;
 
 use Jaddek\Kraken\Http\Client\Hydrator\Hydrator;
 use Jaddek\Kraken\Http\Client\Hydrator\HydratorException;
@@ -26,11 +26,9 @@ class Provider extends BaseProvider
     public function __invoke(RequestQuery $query): Response
     {
         $content = $this->client
-            ->getTickerInformation($query->toQuery())
+            ->getAssetInfo($query->toQuery())
             ->toArray()
         ;
-
-        $this->adaptContent($content);
 
         /** @var Response $response */
         $response = Hydrator::instance($content, Response::class);
@@ -40,20 +38,6 @@ class Provider extends BaseProvider
         }
 
         return $response;
-    }
-
-    /**
-     * @param array<string, mixed> $data
-     * @return void
-     */
-    private function adaptContent(array &$data): void
-    {
-        $synced = [];
-        foreach ($data['result'] ?? [] as $pair => $body) {
-            $synced[] = KeySync::sync($body, $pair);
-        }
-
-        $data['result'] = $synced;
     }
 }
 

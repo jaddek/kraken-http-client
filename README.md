@@ -1,4 +1,5 @@
 # Documentation source
+
 Date of documentation: 24.01.2023
 
 Kraken REST API: https://docs.kraken.com/rest/
@@ -7,7 +8,62 @@ Kraken REST API: https://docs.kraken.com/rest/
 
 ## Public API
 
-### Ticker
+### Get Server Time
+
+```php
+require 'vendor/autoload.php';
+
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$provider = $factory->getServerTimeProvider();
+$provider->detachErrorCallback(); // detach exception throwing
+$result = $provider();
+
+```
+
+### Get System Status
+
+```php
+require 'vendor/autoload.php';
+
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$provider = $factory->getSystemStatusProvider();
+$provider->detachErrorCallback(); // detach exception throwing
+$result = $provider();
+```
+
+### Get Asset Info
+
+```php
+require 'vendor/autoload.php';
+
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new \Jaddek\Kraken\Http\Client\Provider\AssetInfo\RequestQuery();
+$query->addCoin(\Jaddek\Kraken\Http\Client\Crypto::AAVE);
+$query->addCoin(\Jaddek\Kraken\Http\Client\Crypto::BCH);
+
+$provider = $factory->getAssetInfoProvider();
+$provider->detachErrorCallback(); // detach exception throwing
+print_r($provider($query));
+```
+
+### Get Tradable Asset Pairs
+
+### Get Ticker Information
 
 ```php
 require 'vendor/autoload.php';
@@ -28,8 +84,15 @@ $provider = $factory->getTickerProvider();
 $provider->detachErrorCallback(); // detach exception throwing
 
 $result = $provider($query);
-
 ```
+
+### Get OHLC Data
+
+### Get Order Book
+
+### Get Recent Trades
+
+### Get Recent Spreads
 
 ## Private API
 
@@ -128,9 +191,11 @@ $result   = $provider($data);
 ## Exceptions
 
 **Base exception**
+
 ```php
 \Jaddek\Kraken\Http\Client\KrakenException::class
 ```
+
 **KrakenValidationException**
 
 Applicable for create order. Validator checks min volume operation validation.
@@ -139,7 +204,7 @@ Applicable for create order. Validator checks min volume operation validation.
 \Jaddek\Kraken\Http\Client\KrakenValidationException::class
 ```
 
-Min Volume list: 
+Min Volume list:
 
 ```php
 \Jaddek\Kraken\Http\Client\MinTradeLimits::class
