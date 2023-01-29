@@ -58,10 +58,33 @@ $query->addCoin(\Jaddek\Kraken\Http\Client\Crypto::BCH);
 
 $provider = $factory->getAssetInfoProvider();
 $provider->detachErrorCallback(); // detach exception throwing
-print_r($provider($query));
+$result = $provider($query);
 ```
 
 ### Get Tradable Asset Pairs
+
+```php
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\TradableAssetPairs\RequestQuery;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Crypto;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new RequestQuery();
+$query->addPair(Crypto::BTC, Fiat::EUR);
+$query->addPair(Crypto::ETH, Fiat::EUR);
+$query->setLevelInfo(); // default
+$query->setLevelMargin();
+$query->setLevelFees();
+$query->setLevelInfo();
+
+$provider = $factory->getTradableAssetPairsProvider();
+$provider->detachErrorCallback();
+$result = $provider($query);
+```
 
 ### Get Ticker Information
 

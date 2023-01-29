@@ -13,7 +13,7 @@ use Jaddek\Kraken\Http\Client\Provider\User\Balance\Trade\Provider as TradeBalan
 use Jaddek\Kraken\Http\Client\Provider\Time\Provider as ServerTimeProvider;
 use Jaddek\Kraken\Http\Client\Provider\Status\Provider as SystemStatusProvider;
 use Jaddek\Kraken\Http\Client\Provider\AssetInfo\Provider as AssetInfoProvider;
-
+use Jaddek\Kraken\Http\Client\Provider\TradableAssetPairs\Provider as TradableAssetPairsProvider;
 
 
 class ProviderFactory
@@ -65,5 +65,10 @@ class ProviderFactory
     public function getAssetInfoProvider(): AssetInfoProvider
     {
         return AssetInfoProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getTradableAssetPairsProvider(): TradableAssetPairsProvider
+    {
+        return TradableAssetPairsProvider::getInstance($this->krakenHttpClient);
     }
 }
