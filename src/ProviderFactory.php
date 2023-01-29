@@ -14,7 +14,10 @@ use Jaddek\Kraken\Http\Client\Provider\Time\Provider as ServerTimeProvider;
 use Jaddek\Kraken\Http\Client\Provider\Status\Provider as SystemStatusProvider;
 use Jaddek\Kraken\Http\Client\Provider\AssetInfo\Provider as AssetInfoProvider;
 use Jaddek\Kraken\Http\Client\Provider\TradableAssetPairs\Provider as TradableAssetPairsProvider;
-
+use Jaddek\Kraken\Http\Client\Provider\OHLCData\Provider as OHLCDataProvider;
+use Jaddek\Kraken\Http\Client\Provider\OrderBook\Provider as OrderBookProvider;
+use Jaddek\Kraken\Http\Client\Provider\RecentTrades\Provider as RecentTradesProvider;
+use Jaddek\Kraken\Http\Client\Provider\RecentSpreads\Provider as RecentSpreadsProvider;
 
 class ProviderFactory
 {
@@ -70,5 +73,25 @@ class ProviderFactory
     public function getTradableAssetPairsProvider(): TradableAssetPairsProvider
     {
         return TradableAssetPairsProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getOHLCDataProvider(): OHLCDataProvider
+    {
+        return OHLCDataProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getOrderBookProvider(): OrderBookProvider
+    {
+        return OrderBookProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getRecentTradesProvider(): RecentTradesProvider
+    {
+        return RecentTradesProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getRecentSpreadsProvider(): RecentSpreadsProvider
+    {
+        return RecentSpreadsProvider::getInstance($this->krakenHttpClient);
     }
 }

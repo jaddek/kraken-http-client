@@ -13,8 +13,8 @@ Kraken REST API: https://docs.kraken.com/rest/
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
 
 $httpClient = KrakenKrakenHttpClient::createDefaultClient();
 $factory    = new ProviderFactory($httpClient);
@@ -30,8 +30,8 @@ $result = $provider();
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
 
 $httpClient = KrakenKrakenHttpClient::createDefaultClient();
 $factory    = new ProviderFactory($httpClient);
@@ -46,8 +46,8 @@ $result = $provider();
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
 
 $httpClient = KrakenKrakenHttpClient::createDefaultClient();
 $factory    = new ProviderFactory($httpClient);
@@ -64,8 +64,10 @@ $result = $provider($query);
 ### Get Tradable Asset Pairs
 
 ```php
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
 use \Jaddek\Kraken\Http\Client\Provider\TradableAssetPairs\RequestQuery;
 use \Jaddek\Kraken\Http\Client\Fiat;
 use \Jaddek\Kraken\Http\Client\Crypto;
@@ -91,11 +93,11 @@ $result = $provider($query);
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\Crypto;
-use Jaddek\Kraken\Http\Client\Fiat;
-use Jaddek\Kraken\Http\Client\Provider\Ticker\RequestQuery;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\Crypto;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Provider\Ticker\RequestQuery;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
 
 $query = new RequestQuery();
 $query->addPair(Crypto::LTC, Fiat::EUR);
@@ -111,11 +113,100 @@ $result = $provider($query);
 
 ### Get OHLC Data
 
+```php
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\OHLCData\RequestQuery;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Crypto;
+use \Jaddek\Kraken\Http\Client\Provider\OHLCData\IntervalEnum;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new RequestQuery(
+    pair: Crypto::BTC->value.Fiat::EUR->value,
+    interval: IntervalEnum::DAYS_15,
+    since: time()
+);
+
+$provider = $factory->getOHLCDataProvider();
+$provider->detachErrorCallback();
+$result = $provider($query);
+```
+
 ### Get Order Book
+
+```php
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\OrderBook\RequestQuery;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Crypto;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new RequestQuery(
+    pair: Crypto::BTC->value.Fiat::EUR->value,
+    count: 10
+);
+
+$provider = $factory->getOrderBookProvider();
+$provider->detachErrorCallback();
+$result = $provider($query);
+```
 
 ### Get Recent Trades
 
+```php
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\RecentTrades\RequestQuery;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Crypto;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new RequestQuery(
+    pair: Crypto::BTC->value.Fiat::EUR->value,
+);
+
+$provider = $factory->getRecentTradesProvider();
+$provider->detachErrorCallback();
+$result = $provider($query);
+```
+
 ### Get Recent Spreads
+
+```php
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\RecentSpreads\RequestQuery;
+use \Jaddek\Kraken\Http\Client\Fiat;
+use \Jaddek\Kraken\Http\Client\Crypto;
+
+$httpClient = KrakenKrakenHttpClient::createDefaultClient();
+$factory    = new ProviderFactory($httpClient);
+
+$query = new RequestQuery(
+    pair: Crypto::BTC->value.Fiat::EUR->value,
+);
+
+$provider = $factory->getRecentSpreadsProvider();
+$provider->detachErrorCallback();
+$result = $provider($query);
+
+```
 
 ## Private API
 
@@ -126,13 +217,13 @@ $result = $provider($query);
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
-use Jaddek\Kraken\Http\Client\Auth\Signer;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Auth\Signer;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
 
 const SECRET = '';
 const KEY = '';
@@ -152,13 +243,13 @@ $result = $provider();
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
-use Jaddek\Kraken\Http\Client\Auth\Signer;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Auth\Signer;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
 
 const SECRET = '';
 const KEY = '';
@@ -179,13 +270,13 @@ $result = $provider();
 ```php
 require 'vendor/autoload.php';
 
-use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
-use Jaddek\Kraken\Http\Client\ProviderFactory;
-use Jaddek\Kraken\Http\Client\Auth\Signer;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
-use Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Auth\Signer;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\RequestBody;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\Single\Request\Order;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOrderType;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Add\EnumOperationType;
 
 const SECRET = '';
 const KEY = '';
