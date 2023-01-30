@@ -265,7 +265,7 @@ $result = $provider();
 
 ### User trading
 
-#### Create single order
+#### Add single order
 
 ```php
 require 'vendor/autoload.php';
@@ -301,6 +301,78 @@ $provider = $factory->getOrderAddProvider();
 $provider->detachErrorCallback(); // detach exception throwing
 $result   = $provider($data);
 ```
+
+### Add Order Batch
+
+### Edit Order
+
+### Cancel Order
+
+### Cancel All Orders
+
+### Cancel All Orders After X
+
+### Cancel Order Batch
+
+## User Funding
+
+### Get Deposit Methods
+
+### Get Deposit Addresses
+
+### Get Status Recent Deposits
+
+### Get Withdrawal Information
+
+### Withdraw Funds
+
+### Status Recent Withdrawals
+
+### Cancel Withdrawal
+
+### Wallet Transfer
+
+## User Subaccounts
+
+### Create Sub Account
+
+### Account Transfer
+
+## User Staking
+
+### Stake Asset
+
+### Un Stake Asset
+
+### List of Stakeable Assets
+
+### Pending Staking Transactions
+
+### List of Staking Transactions
+
+## Websocket
+
+### Get WebSocket Token
+
+```php
+require 'vendor/autoload.php';
+
+use Jaddek\Kraken\Http\Client\Auth\Signer;
+use Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+
+const SECRET = '';
+const KEY = '';
+
+$signer     = new Signer(key: KEY, secret: SECRET);
+$httpClient = KrakenKrakenHttpClient::createDefaultClient($signer);
+$factory    = new ProviderFactory($httpClient);
+
+$provider = $factory->getWebsocketTokenProvider();
+$provider->detachErrorCallback();
+$result = $provider();
+```
+
 
 ## Exceptions
 

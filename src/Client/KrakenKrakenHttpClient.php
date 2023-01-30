@@ -599,6 +599,27 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
 
     /** /User Sub Accounts */
 
+    /** WebSocket */
+
+    /**
+     * @param array<mixed, mixed> $body
+     * @return ResponseInterface
+     * @throws TransportExceptionInterface
+     */
+    public function getWebSocketToken(string $nonce, array $body): ResponseInterface
+    {
+        $this->checkSigner();
+        $url = '/0/private/GetWebSocketsToken';
+        $body = http_build_query($body);
+
+        return $this->httpClient->request('POST', $url, [
+            'body' => $body,
+            'headers' => $this->signer?->getSignHeaders($url, $nonce, $body),
+        ]);
+    }
+
+    /** /WebSocket */
+
     /**
      *********************************************************
      * Public methods

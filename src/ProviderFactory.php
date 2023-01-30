@@ -18,6 +18,7 @@ use Jaddek\Kraken\Http\Client\Provider\OHLCData\Provider as OHLCDataProvider;
 use Jaddek\Kraken\Http\Client\Provider\OrderBook\Provider as OrderBookProvider;
 use Jaddek\Kraken\Http\Client\Provider\RecentTrades\Provider as RecentTradesProvider;
 use Jaddek\Kraken\Http\Client\Provider\RecentSpreads\Provider as RecentSpreadsProvider;
+use Jaddek\Kraken\Http\Client\Provider\Websocket\Provider as WebsocketTokenProvider;
 
 class ProviderFactory
 {
@@ -93,5 +94,10 @@ class ProviderFactory
     public function getRecentSpreadsProvider(): RecentSpreadsProvider
     {
         return RecentSpreadsProvider::getInstance($this->krakenHttpClient);
+    }
+
+    public function getWebsocketTokenProvider(): WebsocketTokenProvider
+    {
+        return WebsocketTokenProvider::getInstance($this->krakenHttpClient);
     }
 }

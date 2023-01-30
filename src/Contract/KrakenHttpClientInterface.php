@@ -10,7 +10,8 @@ interface KrakenHttpClientInterface extends
     MarketDataInterface,
     UserStakingInterface,
     UserSubAccountsInterface,
-    UserFundingInterface
+    UserFundingInterface,
+    WebSocketInterface
 {
 
 }

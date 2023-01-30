@@ -98,9 +98,9 @@ class Hydrator
             $value = $this->hydrateCollection($value, $this->levels[$key]);
         }
 
-        $newArray   = [];
-        $reflection = new ReflectionClass($class);
-        $constructor = $reflection->getConstructor();
+        $newArray              = [];
+        $reflection            = new ReflectionClass($class);
+        $constructor           = $reflection->getConstructor();
         $constructorParameters = $constructor ? $constructor->getParameters() : [];
 
         foreach ($constructorParameters as $parameter) {
@@ -159,7 +159,12 @@ class Hydrator
         return match (true) {
             $reflection->isSubclassOf(Collection::class) => Collection::class,
             $reflection->isSubclassOf(Item::class) => Item::class,
-            default => throw new HydratorException(sprintf('Unexpected %s subclass', $reflection->getName())),
+            default => throw new HydratorException(sprintf(
+                'Unexpected %s subclass. Expecting %s or %s',
+                $reflection->getName(),
+                Collection::class,
+                Item::class,
+            )),
         };
     }
 
