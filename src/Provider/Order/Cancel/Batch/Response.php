@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch;
 
 use Jaddek\Kraken\Http\Client\Hydrator\Item;
+use Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch\Response\Result;
 
 class Response extends Item
 {

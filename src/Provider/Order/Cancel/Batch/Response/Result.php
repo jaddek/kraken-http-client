@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch;
+namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch\Response;
 
 use Jaddek\Kraken\Http\Client\Hydrator\Item;
 
