@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel;
-
+namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Single;
 class RequestBody implements \JsonSerializable
 {
     public function __construct(

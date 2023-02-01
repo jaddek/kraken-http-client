@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Order\CancelBatch;
+namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch;
 
 use Jaddek\Kraken\Http\Client\Hydrator\Hydrator;
 use Jaddek\Kraken\Http\Client\Provider as BaseProvider;
-
 
 class Provider extends BaseProvider
 {

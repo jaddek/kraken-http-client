@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jaddek\Kraken\Http\Client\Provider\Order\CancelBatch;
+namespace Jaddek\Kraken\Http\Client\Provider\Order\Cancel\Batch;
 
 class RequestBody implements \JsonSerializable
 {
