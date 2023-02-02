@@ -19,6 +19,7 @@ use Jaddek\Kraken\Http\Client\Provider\OrderBook\Provider as OrderBookProvider;
 use Jaddek\Kraken\Http\Client\Provider\RecentTrades\Provider as RecentTradesProvider;
 use Jaddek\Kraken\Http\Client\Provider\RecentSpreads\Provider as RecentSpreadsProvider;
 use Jaddek\Kraken\Http\Client\Provider\Websocket\Provider as WebsocketTokenProvider;
+use Jaddek\Kraken\Http\Client\Provider\Order\Edit\Provider as OrderEditProvider;
 
 class ProviderFactory
 {
@@ -100,4 +101,10 @@ class ProviderFactory
     {
         return WebsocketTokenProvider::getInstance($this->krakenHttpClient);
     }
+
+    public function getOrderEditProvider(): OrderEditProvider
+    {
+        return OrderEditProvider::getInstance($this->krakenHttpClient);
+    }
+
 }

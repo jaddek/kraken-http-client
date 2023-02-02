@@ -11,10 +11,11 @@ class Provider extends BaseProvider
 {
     public function __invoke(RequestBody $body): Response
     {
-        $content = $this->client
-            ->orderEdit($body->jsonSerialize())
-            ->toArray()
-        ;
+        Validator::run($body);
+
+        $nonce    = $body->getNonceOfGenIfNull();
+        $response = $this->client->orderAdd($nonce, $body->toArrayWithSubOrder());
+        $content  = $response->toArray();
 
         $response = Hydrator::instance($content, Response::class);
 

@@ -31,7 +31,6 @@ class Provider extends BaseProvider
 
         $nonce    = $body->getNonceOfGenIfNull();
         $response = $this->client->orderAdd($nonce, $body->toArrayWithSubOrder());
-
         $content  = $response->toArray();
 
         /** @var Response $response */

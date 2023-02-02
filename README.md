@@ -306,6 +306,37 @@ $result   = $provider($data);
 
 ### Edit Order
 
+```php
+require 'vendor/autoload.php';
+
+use \Jaddek\Kraken\Http\Client\Auth\Signer;
+use \Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient;
+use \Jaddek\Kraken\Http\Client\ProviderFactory;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Edit\RequestBody;
+use \Jaddek\Kraken\Http\Client\Provider\Order\Edit\Request\Order;
+
+const SECRET = '';
+const KEY = '';
+
+$signer     = new Signer(key: KEY, secret: SECRET);
+$httpClient = KrakenKrakenHttpClient::createDefaultClient($signer);
+$factory    = new ProviderFactory($httpClient);
+
+$body = new RequestBody(
+    order: new Order(
+        txid: 'txid',
+        volume: '0.06',
+    ),
+    pair: 'LTCEUR',
+    cancel_response: false,
+    validate: false
+);
+
+$provider = $factory->getOrderEditProvider();
+$provider->detachErrorCallback();
+$result = $provider($body);
+```
+
 ### Cancel Order
 
 ### Cancel All Orders
