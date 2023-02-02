@@ -13,8 +13,8 @@ class Response extends Item
      * @param array<int, mixed> $error
      */
     public function __construct(
-        private readonly ?Result $result = null,
-        private readonly array   $error = [],
+        protected readonly ?Result $result = null,
+        protected readonly array   $error = [],
     )
     {
 

@@ -9,9 +9,9 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Result extends Item
 {
     public function __construct(
-        private readonly string $status,
+        protected readonly string $status,
         /** Current timestamp (RFC3339) */
-        private readonly string $timestamp,
+        protected readonly string $timestamp,
     )
     {
 

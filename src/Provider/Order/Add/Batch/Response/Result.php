@@ -9,7 +9,7 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Result extends Item
 {
     public function __construct(
-        private readonly OrderCollection $orders,
+        protected readonly OrderCollection $orders,
     )
     {
 

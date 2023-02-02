@@ -9,8 +9,8 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Trade extends Item
 {
     public function __construct(
-        private string $price,
-        private string $lotVolumes
+        protected string $price,
+        protected string $lotVolumes
     )
     {
 

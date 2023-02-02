@@ -9,8 +9,8 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class VolumeWeightedAveragePrice extends Item
 {
     public function __construct(
-        private string $today,
-        private string $last24Hours,
+        protected string $today,
+        protected string $last24Hours,
     )
     {
     }

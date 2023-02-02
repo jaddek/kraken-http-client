@@ -9,12 +9,12 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Asset extends Item
 {
     public function __construct(
-        private readonly string $aclass,
-        private readonly string $altname,
-        private readonly ?int $decimals,
-        private readonly ?int $display_decimals,
-        private readonly ?int $collateral_value,
-        private readonly string $status,
+        protected readonly string $aclass,
+        protected readonly string $altname,
+        protected readonly ?int $decimals,
+        protected readonly ?int $display_decimals,
+        protected readonly ?int $collateral_value,
+        protected readonly string $status,
     )
     {
     }

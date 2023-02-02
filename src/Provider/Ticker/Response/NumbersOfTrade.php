@@ -9,8 +9,8 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class NumbersOfTrade extends Item
 {
     public function __construct(
-        private int $today,
-        private int $last24Hours
+        protected int $today,
+        protected int $last24Hours
     )
     {
 

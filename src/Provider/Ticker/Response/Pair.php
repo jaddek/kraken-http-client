@@ -10,16 +10,16 @@ class Pair extends Item
 {
 
     public function __construct(
-        private Ask                        $a, // ASK
-        private Bid                        $b, // BID
-        private Trade                      $c, // Last trade closed
-        private Volume                     $v, // Volume
-        private VolumeWeightedAveragePrice $p, // Volume weighted average price
-        private NumbersOfTrade             $t, // Number of trades
-        private Low                        $l, // Low
-        private High                       $h, // High
-        private string                     $o, // Today's opening price
-        private string                     $pair,
+        protected Ask                        $a, // ASK
+        protected Bid                        $b, // BID
+        protected Trade                      $c, // Last trade closed
+        protected Volume                     $v, // Volume
+        protected VolumeWeightedAveragePrice $p, // Volume weighted average price
+        protected NumbersOfTrade             $t, // Number of trades
+        protected Low                        $l, // Low
+        protected High                       $h, // High
+        protected string                     $o, // Today's opening price
+        protected string                     $pair,
     )
     {
 

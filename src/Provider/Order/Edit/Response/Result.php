@@ -14,55 +14,55 @@ class Result extends Item
          * string
          * Order description info
          */
-        private readonly Description $descr,
+        protected readonly Description $descr,
 
         /**
          * string
          * Original userref if passed with the request
          */
-        private readonly string $newuserref,
+        protected readonly string $newuserref,
 
         /**
          * string
          * Original userref if passed with the request
          */
-        private readonly string $olduserref,
+        protected readonly string $olduserref,
 
         /**
          * int
          * Number of orders cancelled (either 0 or 1)
          */
-        private readonly int $orders_cancelled,
+        protected readonly int $orders_cancelled,
 
         /**
          * string
          * Original transaction ID
          */
-        private readonly string $originaltxid,
+        protected readonly string $originaltxid,
 
         /**
          * string
          * Status of the order: Ok or Err
          */
-        private readonly string $status,
+        protected readonly string $status,
 
         /**
          * string
          * Updated volume
          */
-        private readonly string $volume,
+        protected readonly string $volume,
 
         /**
          * string
          * Updated price
          */
-        private readonly string $price,
+        protected readonly string $price,
 
         /**
          * string
          * Updated price2
          */
-        private readonly string $price2,
+        protected readonly string $price2,
 
         /**
          * string
@@ -70,13 +70,13 @@ class Result extends Item
          *
          * (if order was added successfully)
          */
-        private ?string $txid,
+        protected ?string $txid,
 
         /**
          * string
          * Error message if unsuccessful
          */
-        private ?string $error_message = null,
+        protected ?string $error_message = null,
 
     )
     {

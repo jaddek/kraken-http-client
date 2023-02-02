@@ -9,8 +9,8 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Result extends Item
 {
     public function __construct(
-        private readonly Description $descr,
-        private readonly ?array      $txid = null,
+        protected readonly Description $descr,
+        protected readonly ?array      $txid = null,
     )
     {
 

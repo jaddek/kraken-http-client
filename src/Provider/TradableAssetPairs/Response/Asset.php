@@ -12,115 +12,115 @@ class Asset extends Item
         /**
          * Alternate pair name
          */
-        private readonly ?string $altname,
+        protected readonly ?string $altname,
 
         /**
          * WebSocket pair name (if available)
          */
-        private readonly ?string $wsname,
+        protected readonly ?string $wsname,
 
         /**
          * Asset class of base component
          */
-        private readonly ?string $aclass_base,
+        protected readonly ?string $aclass_base,
 
         /**
          * Asset ID of base component
          */
-        private readonly ?string $base,
+        protected readonly ?string $base,
 
         /**
          * Asset class of quote component
          */
-        private readonly ?string $aclass_quote,
+        protected readonly ?string $aclass_quote,
 
         /**
          * Asset ID of quote component
          */
-        private readonly ?string $quote,
+        protected readonly ?string $quote,
 
         /**
          * Scaling decimal places for pair
          */
-        private readonly ?int $cost_decimals,
+        protected readonly ?int $cost_decimals,
 
         /**
          * Scaling decimal places for cost
          */
-        private readonly ?int $pair_decimals,
+        protected readonly ?int $pair_decimals,
 
         /**
          * Scaling decimal places for volume
          */
-        private readonly ?int $lot_decimals,
+        protected readonly ?int $lot_decimals,
 
         /**
          * Amount to multiply lot volume by to get currency volume
          */
-        private readonly ?int $lot_multiplier,
+        protected readonly ?int $lot_multiplier,
 
         /**
          * Array of leverage amounts available when buying
          *
          * @var array<int>|null
          */
-        private readonly ?array $leverage_buy,
+        protected readonly ?array $leverage_buy,
 
         /**
          * Array of leverage amounts available when selling
          *
          * @var array<int>|null
          */
-        private readonly ?array $leverage_sell,
+        protected readonly ?array $leverage_sell,
 
         /**
          * Fee schedule array in [<volume>, <percent fee>] tuples
          *
          * @var array<array<int>>|null
          */
-        private readonly ?array $fees,
+        protected readonly ?array $fees,
 
         /**
          * Maker fee schedule array in [<volume>, <percent fee>] tuples (if on maker/taker)
          *
          * @var array<array<int>>|null
          */
-        private readonly ?array $fees_maker,
+        protected readonly ?array $fees_maker,
 
         /**
          * Volume discount currency
          */
-        private readonly ?string $fee_volume_currency,
+        protected readonly ?string $fee_volume_currency,
 
         /**
          * Margin call level
          */
-        private readonly ?int $margin_call,
+        protected readonly ?int $margin_call,
 
         /**
          * Stop-out/liquidation margin level
          */
-        private readonly ?int $margin_stop,
+        protected readonly ?int $margin_stop,
 
         /**
          * Minimum order size (in terms of base currency)
          */
-        private readonly ?string $ordermin,
+        protected readonly ?string $ordermin,
 
         /**
          * Minimum order cost (in terms of quote currency)
          */
-        private readonly ?string $costmin,
+        protected readonly ?string $costmin,
 
         /**
          * Minimum increment between valid price levels
          */
-        private readonly ?string $tick_size,
+        protected readonly ?string $tick_size,
 
         /**
          * Status of asset. Possible values: online, cancel_only, post_only, limit_only, reduce_only.
          */
-        private readonly ?string $status,
+        protected readonly ?string $status,
     )
     {
     }

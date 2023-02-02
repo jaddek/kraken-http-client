@@ -15,8 +15,8 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 class KrakenKrakenHttpClient implements KrakenHttpClientInterface
 {
     final public function __construct(
-        private readonly HttpClientInterface $httpClient,
-        private readonly ?SignerInterface        $signer = null,
+        private readonly HttpClientInterface $krakenClient,
+        private readonly ?SignerInterface    $signer = null,
     )
     {
 
@@ -52,7 +52,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
         $url  = '/0/private/AddOrder';
         $body = http_build_query($body);
 
-        return $this->httpClient->request('POST', $url, [
+        return $this->krakenClient->request('POST', $url, [
             'body'    => $body,
             'headers' => $this->signer?->getSignHeaders($url, $nonce, $body),
         ]);
@@ -70,7 +70,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
         $url  = '/0/private/AddOrderBatch';
         $body = http_build_query($body);
 
-        return $this->httpClient->request('POST', $url, [
+        return $this->krakenClient->request('POST', $url, [
             'body'    => $body,
             'headers' => $this->signer?->getSignHeaders($url, $nonce, $body),
         ]);
@@ -85,7 +85,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/EditOrder', [
+        return $this->krakenClient->request('POST', '/0/private/EditOrder', [
             'body' => $body
         ]);
     }
@@ -99,7 +99,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/CancelOrder', [
+        return $this->krakenClient->request('POST', '/0/private/CancelOrder', [
             'body' => $body
         ]);
     }
@@ -111,7 +111,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function orderCancelAll(array $body): ResponseInterface
     {
-        return $this->httpClient->request('POST', '/0/private/CancelAll', [
+        return $this->krakenClient->request('POST', '/0/private/CancelAll', [
             'body' => $body
         ]);
     }
@@ -125,7 +125,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/CancelAllOrdersAfter', [
+        return $this->krakenClient->request('POST', '/0/private/CancelAllOrdersAfter', [
             'body' => $body
         ]);
     }
@@ -139,7 +139,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/CancelOrderBatch', [
+        return $this->krakenClient->request('POST', '/0/private/CancelOrderBatch', [
             'body' => $body
         ]);
     }
@@ -163,7 +163,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
         $url  = '/0/private/Balance';
         $body = http_build_query($body);
 
-        return $this->httpClient->request('POST', $url, [
+        return $this->krakenClient->request('POST', $url, [
             'body'    => $body,
             'headers' => $this->signer?->getSignHeaders($url, $nonce, $body)
         ]);
@@ -181,7 +181,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
         $url  = '/0/private/TradeBalance';
         $body = http_build_query($body);
 
-        return $this->httpClient->request('POST', $url, [
+        return $this->krakenClient->request('POST', $url, [
             'body'    => $body,
             'headers' => $this->signer?->getSignHeaders($url, $nonce, $body),
         ]);
@@ -196,7 +196,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/OpenOrders', [
+        return $this->krakenClient->request('POST', '/0/private/OpenOrders', [
             'body' => $body
         ]);
     }
@@ -210,7 +210,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/ClosedOrders', [
+        return $this->krakenClient->request('POST', '/0/private/ClosedOrders', [
             'body' => $body
         ]);
     }
@@ -224,7 +224,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/QueryOrders', [
+        return $this->krakenClient->request('POST', '/0/private/QueryOrders', [
             'body' => $body
         ]);
     }
@@ -238,7 +238,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/TradesHistory', [
+        return $this->krakenClient->request('POST', '/0/private/TradesHistory', [
             'body' => $body
         ]);
     }
@@ -252,7 +252,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/QueryTrades', [
+        return $this->krakenClient->request('POST', '/0/private/QueryTrades', [
             'body' => $body
         ]);
     }
@@ -266,7 +266,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/OpenPositions', [
+        return $this->krakenClient->request('POST', '/0/private/OpenPositions', [
             'body' => $body
         ]);
     }
@@ -280,7 +280,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Ledgers', [
+        return $this->krakenClient->request('POST', '/0/private/Ledgers', [
             'body' => $body
         ]);
     }
@@ -294,7 +294,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/QueryLedgers', [
+        return $this->krakenClient->request('POST', '/0/private/QueryLedgers', [
             'body' => $body
         ]);
     }
@@ -308,7 +308,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/TradeVolume', [
+        return $this->krakenClient->request('POST', '/0/private/TradeVolume', [
             'body' => $body
         ]);
     }
@@ -322,7 +322,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/AddExport', [
+        return $this->krakenClient->request('POST', '/0/private/AddExport', [
             'body' => $body
         ]);
     }
@@ -336,7 +336,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/ExportStatus', [
+        return $this->krakenClient->request('POST', '/0/private/ExportStatus', [
             'body' => $body
         ]);
     }
@@ -350,7 +350,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/RetrieveExport', [
+        return $this->krakenClient->request('POST', '/0/private/RetrieveExport', [
             'body' => $body
         ]);
     }
@@ -364,7 +364,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/DeleteExport', [
+        return $this->krakenClient->request('POST', '/0/private/DeleteExport', [
             'body' => $body
         ]);
     }
@@ -384,7 +384,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/DepositMethods', [
+        return $this->krakenClient->request('POST', '/0/private/DepositMethods', [
             'body' => $body
         ]);
     }
@@ -398,7 +398,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/DepositAddresses', [
+        return $this->krakenClient->request('POST', '/0/private/DepositAddresses', [
             'body' => $body
         ]);
     }
@@ -412,7 +412,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/DepositStatus', [
+        return $this->krakenClient->request('POST', '/0/private/DepositStatus', [
             'body' => $body
         ]);
     }
@@ -426,7 +426,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/WithdrawInfo', [
+        return $this->krakenClient->request('POST', '/0/private/WithdrawInfo', [
             'body' => $body
         ]);
     }
@@ -440,7 +440,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Withdraw', [
+        return $this->krakenClient->request('POST', '/0/private/Withdraw', [
             'body' => $body
         ]);
     }
@@ -454,7 +454,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/WithdrawStatus', [
+        return $this->krakenClient->request('POST', '/0/private/WithdrawStatus', [
             'body' => $body
         ]);
     }
@@ -468,7 +468,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/WithdrawCancel', [
+        return $this->krakenClient->request('POST', '/0/private/WithdrawCancel', [
             'body' => $body
         ]);
     }
@@ -482,7 +482,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/WalletTransfer', [
+        return $this->krakenClient->request('POST', '/0/private/WalletTransfer', [
             'body' => $body
         ]);
     }
@@ -502,7 +502,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Stake', [
+        return $this->krakenClient->request('POST', '/0/private/Stake', [
             'body' => $body
         ]);
     }
@@ -516,7 +516,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Unstake', [
+        return $this->krakenClient->request('POST', '/0/private/Unstake', [
             'body' => $body
         ]);
     }
@@ -530,7 +530,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Staking/Assets', [
+        return $this->krakenClient->request('POST', '/0/private/Staking/Assets', [
             'body' => $body
         ]);
     }
@@ -544,7 +544,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Staking/Pending', [
+        return $this->krakenClient->request('POST', '/0/private/Staking/Pending', [
             'body' => $body
         ]);
     }
@@ -558,7 +558,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/Staking/Transactions', [
+        return $this->krakenClient->request('POST', '/0/private/Staking/Transactions', [
             'body' => $body
         ]);
     }
@@ -578,7 +578,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/CreateSubaccount', [
+        return $this->krakenClient->request('POST', '/0/private/CreateSubaccount', [
             'body' => $body
         ]);
     }
@@ -592,7 +592,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     {
         $this->checkSigner();
 
-        return $this->httpClient->request('POST', '/0/private/AccountTransfer', [
+        return $this->krakenClient->request('POST', '/0/private/AccountTransfer', [
             'body' => $body
         ]);
     }
@@ -609,11 +609,11 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
     public function getWebSocketToken(string $nonce, array $body): ResponseInterface
     {
         $this->checkSigner();
-        $url = '/0/private/GetWebSocketsToken';
+        $url  = '/0/private/GetWebSocketsToken';
         $body = http_build_query($body);
 
-        return $this->httpClient->request('POST', $url, [
-            'body' => $body,
+        return $this->krakenClient->request('POST', $url, [
+            'body'    => $body,
             'headers' => $this->signer?->getSignHeaders($url, $nonce, $body),
         ]);
     }
@@ -634,7 +634,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getServerTime(): ResponseInterface
     {
-        return $this->httpClient->request('POST', '/0/public/Time');
+        return $this->krakenClient->request('POST', '/0/public/Time');
     }
 
     /**
@@ -643,7 +643,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getSystemStatus(): ResponseInterface
     {
-        return $this->httpClient->request('POST', '/0/public/SystemStatus');
+        return $this->krakenClient->request('POST', '/0/public/SystemStatus');
     }
 
     /**
@@ -653,7 +653,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getAssetInfo(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/Assets', [
+        return $this->krakenClient->request('GET', '/0/public/Assets', [
             'query' => $query
         ]);
     }
@@ -665,7 +665,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getTradableAssetPairs(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/AssetPairs', [
+        return $this->krakenClient->request('GET', '/0/public/AssetPairs', [
             'query' => $query
         ]);
     }
@@ -677,7 +677,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getTickerInformation(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/Ticker', [
+        return $this->krakenClient->request('GET', '/0/public/Ticker', [
             'query' => $query
         ]);
     }
@@ -689,7 +689,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getOHLCData(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/OHLC', [
+        return $this->krakenClient->request('GET', '/0/public/OHLC', [
             'query' => $query
         ]);
     }
@@ -701,7 +701,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getOrderBook(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/Depth', [
+        return $this->krakenClient->request('GET', '/0/public/Depth', [
             'query' => $query
         ]);
     }
@@ -713,7 +713,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getRecentTrades(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/Trades', [
+        return $this->krakenClient->request('GET', '/0/public/Trades', [
             'query' => $query
         ]);
     }
@@ -725,7 +725,7 @@ class KrakenKrakenHttpClient implements KrakenHttpClientInterface
      */
     public function getRecentSpreads(array $query): ResponseInterface
     {
-        return $this->httpClient->request('GET', '/0/public/Spread', [
+        return $this->krakenClient->request('GET', '/0/public/Spread', [
             'query' => $query
         ]);
     }

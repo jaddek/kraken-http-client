@@ -6,6 +6,82 @@ Kraken REST API: https://docs.kraken.com/rest/
 
 # Usage
 
+## Installation
+
+```composer
+"repositories": [
+    {
+        "type": "github",
+        "url": "git@github.com:jaddek/kraken-http-client.git"
+    }
+]
+```
+
+```
+composer install jaddek/kraken-http-client
+```
+
+## Symfony integration:
+
+Jaddek\Kraken\Http\Client\Auth\Signer: might be null for using only public API
+
+services.yml:
+
+```yaml
+services:
+    Jaddek\Kraken\Http\Client\Auth\Signer:
+        arguments:
+            $key: 'KEY'
+            $secret: 'SECRET'
+
+    Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient:
+        arguments:
+            $signer: '@Jaddek\Kraken\Http\Client\Auth\Signer'
+
+    Jaddek\Kraken\Http\Client\ProviderFactory:
+        arguments:
+            $krakenHttpClient: '@Jaddek\Kraken\Http\Client\Client\KrakenKrakenHttpClient'
+```
+
+framework.yaml:
+
+```yaml
+framework:
+    http_client:
+        scoped_clients:
+            kraken.client:
+                base_uri: 'https://api.kraken.com'
+```
+
+Using factory (action example)
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Controller;
+
+use Jaddek\Kraken\Http\Client\Crypto;
+use Jaddek\Kraken\Http\Client\Provider\Ticker\Provider as TickerProvider;
+use Jaddek\Kraken\Http\Client\Provider\Ticker\RequestQuery;
+use Jaddek\Kraken\Http\Client\ProviderFactory;
+
+class Index
+{
+    public function __invoke(
+       ProviderFactory $factory,
+    )
+    {
+        $provider = $factory->getTickerProvider();
+        $query = new RequestQuery();
+        $query->addPair(Crypto::ETH, Crypto::USDT);
+        $result = $provider($query);
+    }
+}
+
+```
+
 ## Public API
 
 ### Get Server Time
@@ -403,7 +479,6 @@ $provider = $factory->getWebsocketTokenProvider();
 $provider->detachErrorCallback();
 $result = $provider();
 ```
-
 
 ## Exceptions
 

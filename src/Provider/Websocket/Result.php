@@ -9,8 +9,8 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Result extends Item
 {
     public function __construct(
-        private readonly string $token,
-        private readonly int    $expires
+        protected readonly string $token,
+        protected readonly int    $expires
     )
     {
 

@@ -12,12 +12,12 @@ class Response extends Item
         /**
          * @var array<int, array<string, array<int, array<int, mixed>>>> $result
          */
-        private readonly array $result,
+        protected readonly array $result,
 
         /**
          * @var array<int, mixed> $error
          */
-        private readonly array $error = [],
+        protected readonly array $error = [],
     )
     {
     }

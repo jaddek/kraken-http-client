@@ -9,9 +9,9 @@ use Jaddek\Kraken\Http\Client\Hydrator\Item;
 class Order extends Item
 {
     public function __construct(
-        private readonly string $order,
-        private readonly string $close,
-        private readonly string $txid,
+        protected readonly string $order,
+        protected readonly string $close,
+        protected readonly string $txid,
     )
     {
 

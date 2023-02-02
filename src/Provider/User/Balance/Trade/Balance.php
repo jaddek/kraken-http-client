@@ -11,25 +11,25 @@ class Balance extends Item
 {
     public function __construct(
         /** Equivalent balance (combined balance of all currencies) */
-        private readonly ?string $eb,
+        protected readonly ?string $eb,
         /** Trade balance (combined balance of all equity currencies) */
-        private readonly ?string $tb,
+        protected readonly ?string $tb,
         /** Margin amount of open positions */
-        private readonly ?string $m,
+        protected readonly ?string $m,
         /** Unrealized net profit/loss of open positions */
-        private readonly ?string $n,
+        protected readonly ?string $n,
         /** Cost basis of open positions */
-        private readonly ?string $c,
+        protected readonly ?string $c,
         /** Current floating valuation of open positions */
-        private readonly ?string $v,
+        protected readonly ?string $v,
         /** Equity: trade balance + unrealized net profit/loss */
-        private readonly ?string $e,
+        protected readonly ?string $e,
         /** Free margin: Equity - initial margin (maximum margin available to open new positions) */
-        private readonly ?string $mf,
+        protected readonly ?string $mf,
         /** Margin level: (equity / initial margin) * 100 */
-        private readonly ?string $ml,
+        protected readonly ?string $ml,
         /** Unexecuted value: Value of unfilled and partially filled orders */
-        private readonly ?string $uv,
+        protected readonly ?string $uv,
     )
     {}
 

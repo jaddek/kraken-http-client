@@ -10,7 +10,7 @@ class Volume extends Item
 {
     public function __construct(
         private string $today,
-        private string $last24Hours,
+        protected string $last24Hours,
     ) {
     }
 
