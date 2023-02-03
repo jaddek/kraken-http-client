@@ -22,7 +22,7 @@ class PairCollection extends Collection
     public function add(Item $item): void
     {
         if ($item instanceof Pair) {
-            $this->collection[$item->getPair()] = $item;
+            $this->collection[$item->getPairNormalized()] = $item;
         } else {
             parent::add($item);
         }

@@ -10,7 +10,7 @@ namespace Jaddek\Kraken\Http\Client;
 enum Crypto: string
 {
     case ZRX = 'ZRX';
-    case INCH1 = '1INCH';
+    case ONEINCH = '1INCH';
     case AAVE = 'AAVE';
     case GHST = 'GHST';
     case ACA = 'ACA';
@@ -224,4 +224,6 @@ enum Crypto: string
     case YFI = 'YFI';
     case YGG = 'YGG';
     case ZEC = 'ZEC';
+
+    case XBT = 'XBT';
 }

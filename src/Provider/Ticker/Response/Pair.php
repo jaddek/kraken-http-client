@@ -5,24 +5,26 @@ declare(strict_types=1);
 namespace Jaddek\Kraken\Http\Client\Provider\Ticker\Response;
 
 use Jaddek\Kraken\Http\Client\Hydrator\Item;
+use Jaddek\Kraken\Http\Client\PairNormalizer;
 
 class Pair extends Item
 {
+    protected readonly string $pairNormalized;
 
     public function __construct(
-        protected Ask                        $a, // ASK
-        protected Bid                        $b, // BID
-        protected Trade                      $c, // Last trade closed
-        protected Volume                     $v, // Volume
-        protected VolumeWeightedAveragePrice $p, // Volume weighted average price
-        protected NumbersOfTrade             $t, // Number of trades
-        protected Low                        $l, // Low
-        protected High                       $h, // High
-        protected string                     $o, // Today's opening price
-        protected string                     $pair,
+        protected readonly Ask               $a, // ASK
+        protected readonly Bid                        $b, // BID
+        protected readonly Trade                      $c, // Last trade closed
+        protected readonly Volume                     $v, // Volume
+        protected readonly VolumeWeightedAveragePrice $p, // Volume weighted average price
+        protected readonly NumbersOfTrade             $t, // Number of trades
+        protected readonly Low                        $l, // Low
+        protected readonly High                       $h, // High
+        protected readonly string                     $o, // Today's opening price
+        protected readonly string                     $pair,
     )
     {
-
+        $this->pairNormalized = PairNormalizer::normalize($this->pair);
     }
 
     /**
@@ -103,5 +105,13 @@ class Pair extends Item
     public function getPair(): string
     {
         return $this->pair;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPairNormalized(): string
+    {
+        return $this->pairNormalized;
     }
 }

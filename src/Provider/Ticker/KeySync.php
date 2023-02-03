@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Jaddek\Kraken\Http\Client\Provider\Ticker;
 
+use Jaddek\Kraken\Http\Client\PairNormalizer;
+
 class KeySync
 {
     private const KEY_MAP = [
