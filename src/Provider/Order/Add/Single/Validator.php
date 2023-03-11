@@ -17,7 +17,7 @@ class Validator
             return $fiat->value;
         }, Fiat::cases());
 
-        $pattern     = sprintf('/%s$/', implode('|', $cases));
+        $pattern     = sprintf('/(%s)$/', implode('|', $cases));
         $allegedCoin = preg_replace($pattern, '', $body->getPair());
 
         $coin = Crypto::tryFrom($allegedCoin);
